@@ -1,11 +1,26 @@
-import React from 'react';
+import React, { useState } from 'react'
+import SocketIO from 'socket.io-client'
+import Overlay from './Overlay'
 
-function App() {
+function App () {
+  const Socket = SocketIO(`http://localhost:3001`)
+  const [showOverlay, setOverlay] = useState(false)
+
+  Socket.on('connect', () => {
+    console.log('[SOCKET] Socket successfully handshaked with core!')
+  })
+
+  function triggerOverlay (event) {
+    event.preventDefault()
+    if (showOverlay) setOverlay(false)
+    else setOverlay(true)
+  }
   return (
     <div className="App">
-      <h1>Hello world</h1>
+      <button onClick={triggerOverlay.bind(this)}>Munculkan overlay!</button>
+      {showOverlay ? <Overlay /> : null}
     </div>
-  );
+  )
 }
 
-export default App;
+export default App
