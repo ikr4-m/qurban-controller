@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import SocketIO from 'socket.io-client'
 import Overlay from './Components/Overlay'
+import Marquee from './Components/Marquee'
 import Config from './config.json'
 
 const Socket = SocketIO(`http://localhost:3001`)
@@ -36,6 +37,7 @@ function App () {
   return (
     <div className="App">
       {showOverlay && <Overlay header={data.header} message={data.message} member={data.member} />}
+      <Marquee />
     </div>
   )
 }

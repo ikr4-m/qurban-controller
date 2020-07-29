@@ -1,0 +1,10 @@
+{
+    "timeout": {
+        "ping": 5,
+        "overlay": 30
+    },
+    "member": {
+        "cols": 4,
+        "rows": 2
+    }
+}
