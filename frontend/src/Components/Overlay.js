@@ -1,17 +1,18 @@
 import React from 'react'
+import '../Sass/main.scss'
 
 function Overlay (props) {
   return (
     <div className='overlay'>
       <div className='container-fluid d-flex flex-column' style={{ height: '100vh' }}>
-        <div className='p-5 m-auto text-center'>
-          <p>
+        <div className='py-2 notification m-auto text-center'>
+          <h1 className='mb-2'>
             {props.header || 'overlay.header'}
-          </p>
-          <p>
+          </h1>
+          <h6 className='mb-4'>
             {props.message || 'overlay.message'}
-          </p>
-          <p>
+          </h6>
+          <p className='mb-0'>
             {props.member.length === 0 ? 'overlay.member' : props.member}
           </p>
         </div>
