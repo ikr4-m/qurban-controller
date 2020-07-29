@@ -3,7 +3,7 @@ import React from 'react'
 function Marquee (props) {
   return (
     <div className='marquee'>
-      <p>This is marquee</p>
+      <p className='mb-0 fixed-bottom w-100'>This is marquee</p>
     </div>
   )
 }
