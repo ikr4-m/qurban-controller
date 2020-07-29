@@ -4,7 +4,7 @@ import '../Sass/main.scss'
 function Overlay (props) {
   return (
     <div className='overlay'>
-      <div className='container-fluid d-flex flex-column' style={{ height: '100vh' }}>
+      <div className='container-fluid'>
         <div className='py-2 notification m-auto text-center'>
           <h1 className='mb-2'>
             {props.header || 'overlay.header'}
