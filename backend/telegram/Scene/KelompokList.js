@@ -28,8 +28,7 @@ class KelompokList extends Scene {
                 stringify = 'Masih kosong.\n'
               } else {
                 data.forEach(da => {
-                  stringify += `${index}. ${da.nama_kelompok} (ID:${da.id}) `
-                  stringify += `(${da.panggil === false ? 'Belum dipanggil' : 'Sudah dipanggil'})\n`
+                  stringify += `${index}. ${da.nama_kelompok} (ID:${da.id})\n`
                   index++
                 })
               }
@@ -57,7 +56,7 @@ class KelompokList extends Scene {
               const rData = data[0]
               await ctx.replyWithMarkdown(
                 `*[LIST KELOMPOK]*\n\nID: ${rData.id}\nNama Kelompok: ${rData.nama_kelompok}\n` + 
-                `Status: ${rData.panggil ? 'Sudah dipanggil' : 'Belum dipanggil'}\nAnggota:\n- ${rData.anggota.join('\n- ')}`
+                `Anggota:\n- ${rData.anggota.join('\n- ')}`
               )
             })
             .catch(async err => {

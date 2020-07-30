@@ -10,13 +10,13 @@ Socket.on('connect', () => {
 })
 
 function App () {
-  const dataDefault = {
+  const [showOverlay, setOverlay] = useState(false)
+  const [data, setData] = useState({
     header: '',
     message: '',
+    name: '',
     member: []
-  }
-  const [showOverlay, setOverlay] = useState(false)
-  const [data, setData] = useState(dataDefault)
+  })
 
   // Dapat pesan dari overlay
   useEffect(() => {
@@ -29,7 +29,6 @@ function App () {
       setData(msg)
       setTimeout(() => {
         setOverlay(false)
-        setData(dataDefault)
       }, timeout)
     })
   })
@@ -39,6 +38,8 @@ function App () {
       {showOverlay && <Overlay header={data.header} message={data.message} member={data.member} />}
       <Marquee
         message={Config.message}
+        namaKelompok={data.name}
+        anggotaKelompok={data.member}
       />
     </div>
   )

@@ -12,12 +12,10 @@ module.exports = app => {
     const data = {
       id: intformat(new FlakeID({ epoch: 1595686563739 }).next(), 'dec'),
       nama_kelompok: request.nama_kelompok || undefined,
-      panggil: request.panggil || undefined,
       anggota: !request.anggota ? undefined : JSON.parse(request.anggota),
     }
     let valid = true
 
-    data.panggil = data.panggil === 'false' ? false : true // eslint-disable-line
     data.anggota = data.anggota.length === 0 ? undefined : data.anggota
     Object.keys(data).forEach(key => {
       if (typeof data[key] === 'undefined') valid = false

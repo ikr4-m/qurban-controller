@@ -47,8 +47,7 @@ class KelompokAdd extends Scene {
           axios(`http://localhost:${process.env.CORE_PORT}/kelompok`, {
             params: {
               nama_kelompok: ctx.wizard.state.namaKelompok,
-              anggota: JSON.stringify(data),
-              panggil: false
+              anggota: JSON.stringify(data)
             },
             method: 'POST'
           })
