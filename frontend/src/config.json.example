@@ -3,10 +3,6 @@
         "ping": 5,
         "overlay": 30
     },
-    "member": {
-        "cols": 4,
-        "rows": 2
-    },
     "message": [
         "Hindari bersentuhan dengan orang lain.",
         "Jaga jarak minimal 1 meter dari orang lain.",
