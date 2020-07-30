@@ -12,9 +12,9 @@ function Overlay (props) {
           </h1>
 
           {/* Message Overlay */}
-          <h6 className='mb-4'>
+          <h4 className='mb-4'>
             {props.message || 'overlay.message'}
-          </h6>
+          </h4>
 
           {/* Member */}
           {props.type === 'PING' ? null : (
