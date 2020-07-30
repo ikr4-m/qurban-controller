@@ -29,7 +29,7 @@ function Marquee (props) {
         <div className="col-5 p-2 marquee-1">
           {/* eslint-disable */}
           <marquee>
-            {props.anggotaKelompok.length > 0 ? props.anggotaKelompok.join(' | ') : <span>Belum ada anggota</span>}
+            {props.anggotaKelompok.length > 0 ? `${props.namaKelompok}: ${props.anggotaKelompok.join(' | ')}` : <span>Belum ada anggota</span>}
           </marquee>
           {/* eslint-enable */}
         </div>

@@ -17,15 +17,14 @@ function Overlay (props) {
           </h6>
 
           {/* Member */}
-          {() => {
-            if (props.type !== 'PING') {
-              return (
-                <p className='mb-0'>
-                  {props.member.length === 0 ? 'overlay.member' : props.member}
-                </p>
-              )
-            }
-          }}
+          {props.type === 'PING' ? null : (
+            <div className='mb-0'>
+              <div className='row justify-content-center'>
+                {/* <div className="col-2 py-1">Member 1</div> */}
+                {props.member.map((member, index) => <div className='col-2 py-1' key={index}> {member} </div>)}
+              </div>
+            </div>
+          )}
         </div>
       </div>
     </div>

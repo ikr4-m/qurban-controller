@@ -35,7 +35,7 @@ function App () {
 
   return (
     <div className="App">
-      {showOverlay && <Overlay header={data.header} message={data.message} member={data.member} />}
+      {showOverlay && <Overlay header={data.header} message={data.message} member={data.member} type={data.type} />}
       <Marquee
         message={Config.message}
         namaKelompok={data.name}

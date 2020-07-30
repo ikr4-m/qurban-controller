@@ -28,7 +28,7 @@ class Caller extends Scene {
         })
 
         if (markup.length === 0) {
-          await ctx.reply('Semua kelompok telah dipanggil.')
+          await ctx.reply('Tidak ada kelompok yang dapat dipanggil.')
           return ctx.scene.leave()
         } else {
           await ctx.reply(
@@ -46,8 +46,16 @@ class Caller extends Scene {
         ctx.wizard.state.kelompok.id = divider[0]
         ctx.wizard.state.kelompok.nama = divider[1]
 
-        // code
-
+        axios(`http://localhost:${process.env.CORE_PORT}/caller`, {
+          method: 'POST',
+          params: {
+            id: ctx.wizard.state.kelompok.id
+          }
+        })
+          .catch(async err => {
+            console.log(err)
+            await ctx.reply('Sepertinya ada kesalahan dengan server')
+          })
         await ctx.replyWithMarkdown(
           `Anda memanggil *${ctx.wizard.state.kelompok.nama}*.`,
           Markup.removeKeyboard().extra()
