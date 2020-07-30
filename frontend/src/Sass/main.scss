@@ -1,0 +1,52 @@
+@import 'variables';
+@import '~bootstrap/scss/bootstrap.scss';
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@500;700&display=swap');
+
+[class*="marquee"] {
+  color: white;
+  
+  &[class$='-1'] {
+    background-color: #ffa32b;
+  }
+  
+  &[class$='-2'] {
+    background-color: #2b87ff;
+  }
+  
+  &[class$='-3'] {
+    background-color: #ff2b36;
+  }
+  
+  &[class$='-4'] {
+    background-color: #a32bff;
+  }
+}
+
+.overlay {
+  margin-top: 4em;
+
+  .container-fluid {
+    .notification {
+      background-color: #FF715B;
+      color: white;
+      border: 4px solid #222;
+      border-radius: 4px;
+      width: 100%;
+      max-width: 600px;
+      font-family: 'Quicksand', Tahoma, Geneva, Verdana, sans-serif;
+    
+      h1,
+      h2,
+      h3,
+      h4,
+      h5,
+      h6 {
+        font-weight: 700;
+      }
+    
+      p {
+        font-weight: 500;
+      }
+    }
+  }
+}
