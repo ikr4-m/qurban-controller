@@ -10,12 +10,13 @@ Socket.on('connect', () => {
 })
 
 function App () {
-  const [showOverlay, setOverlay] = useState(true)
-  const [data, setData] = useState({
+  const dataDefault = {
     header: '',
     message: '',
     member: []
-  })
+  }
+  const [showOverlay, setOverlay] = useState(false)
+  const [data, setData] = useState(dataDefault)
 
   // Dapat pesan dari overlay
   useEffect(() => {
@@ -24,12 +25,11 @@ function App () {
         ? Config.timeout.ping * 1000
         : Config.timeout.overlay * 1000
 
-      console.log(msg)
       setOverlay(true)
       setData(msg)
       setTimeout(() => {
         setOverlay(false)
-        setData({ header: '', message: '', member: [] })
+        setData(dataDefault)
       }, timeout)
     })
   })
@@ -37,7 +37,9 @@ function App () {
   return (
     <div className="App">
       {showOverlay && <Overlay header={data.header} message={data.message} member={data.member} />}
-      <Marquee />
+      <Marquee
+        message={Config.message}
+      />
     </div>
   )
 }

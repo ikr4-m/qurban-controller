@@ -12,8 +12,9 @@ function Marquee (props) {
         </div>
       </div>
       <div className="row">
+        {/* Pesan penting */}
         <div className="col-5 p-2 marquee-3">
-          Marquee 3
+          {}
         </div>
         <div className="col-1 p-2 marquee-4">
           Marquee 4
